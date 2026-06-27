@@ -455,6 +455,7 @@ async function searchForCity(cityName) {
     weatherData = data;
     currentPlace = { name: data.location.name, country: data.location.country };
     placeTimeZone = data.location.tz_id;
+    nightOverride = null; // ← RESET: let the new city's real time decide day/evening/night
 
     renderPage();
     updateClock();
@@ -480,6 +481,7 @@ async function useMyLocation() {
     weatherData = data;
     currentPlace = { name: data.location.name, country: data.location.country };
     placeTimeZone = data.location.tz_id;
+    nightOverride = null; // ← RESET: let the detected location's real time decide day/evening/night
 
     renderPage();
     updateClock();
